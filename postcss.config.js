@@ -11,26 +11,27 @@ module.exports = {
       //  Promise.reject();
       // },
       groupBy(image) {
-        function spritesGroupBy(image) {
+        // function spritesGroupBy(image) {
           // console.log(image.path)
           let groups = /\\src\\views\\(.*?)\\.*/gi.exec(image.path)
           // console.log(groups)
-          let groupName = groups ? groups[1] : 'sprite';
-          image.retina = true
-          image.ratio = 1
-          if (groupName) {
-            let ratio = /@(\d+)x$/gi.exec(groupName)
-            if (ratio) {
-              ratio = ratio[1]
-              while (ratio > 10) {
-                ratio = ratio / 10
-              }
-              image.ratio = ratio
-            }
-          }
+          let groupName = groups ? groups[1] : 'sprite'
           return Promise.resolve(groupName)
-        }
-        return spritesGroupBy(image)
+          // image.retina = true
+          // image.ratio = 1
+          // if (groupName) {
+          //   let ratio = /@(\d+)x$/gi.exec(groupName)
+          //   if (ratio) {
+          //     ratio = ratio[1]
+          //     while (ratio > 10) {
+          //       ratio = ratio / 10
+          //     }
+          //     image.ratio = ratio
+          //   }
+          // }
+          // return Promise.resolve(groupName)
+        // }
+        // return spritesGroupBy(image)
         // return []
         // return [
         //   function(image) {
