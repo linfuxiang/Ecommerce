@@ -1,8 +1,9 @@
 <template>
   <div>
     <router-view></router-view>
-    <button @click="boardcast">广播</button>
-    <button @click="request">Ajax</button>
+    <button class="tttt" @click="boardcast">广播</button>
+    <button class="tttt" @click="request">Ajax</button>
+    <img src="@/assets/logo@2x.png" alt="">
   </div>
 </template>
 <script>
@@ -33,9 +34,17 @@ export default {
 }
 </script>
 <style lang="scss">
-button {
+button.tttt {
   font-size: 36px;
-  @include border-radius(1px, solid, red, 5px, green);
+  border: 1px solid red;
+  border-radius: 5px;
+  background: yellow;
   color: #000;
+  &::after {
+    content: '';
+  }
+  &:after {
+    content: '1';
+  }
 }
 </style>
