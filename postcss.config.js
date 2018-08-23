@@ -8,17 +8,20 @@ module.exports = {
       retina: true, // 支持retina屏幕
       // basePath: '/staticss',
       groupBy(image) {
-          // console.log(image.path)
-          let groups = /\\src\\views\\(.*?)\\.*/gi.exec(image.path)
-          // console.log(groups)
-          let groupName = groups ? groups[1] : 'sprite'
-          return Promise.resolve(groupName)
-          // return Promise.resolve(groupName)
-      }
-      // filterBy: function(image) {  // 过滤器
-      //  Promise.resolve();
-      //  Promise.reject();
-      // },
+        // console.log(image.path)
+        let groups = /\\src\\views\\(.*?)\\.*/gi.exec(image.path)
+        // console.log(groups)
+        let groupName = groups ? groups[1] : 'sprite'
+        return Promise.resolve(groupName)
+        // return Promise.resolve(groupName)
+      },
+      filterBy: function(image) { // 过滤器
+        // console.log(image)
+        if (image.url.includes('assets')) {
+          return Promise.reject();
+        }
+        return Promise.resolve()
+      },
     },
     'postcss-pxtorem': {
       rootValue: 75,

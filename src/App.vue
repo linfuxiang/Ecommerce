@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <router-view></router-view>
     <button class="tttt" @click="boardcast">广播</button>
     <button class="tttt" @click="request">Ajax</button>
@@ -34,17 +34,17 @@ export default {
 }
 </script>
 <style lang="scss">
+// .app {
+//   background-image: url(./assets/1.png);
+//   background-repeat: repeat-y;
+//   background-size: contain;
+// }
+
 button.tttt {
   font-size: 36px;
   border: 1px solid red;
   border-radius: 5px;
   background: yellow;
   color: #000;
-  &::after {
-    content: '';
-  }
-  &:after {
-    content: '1';
-  }
 }
 </style>
