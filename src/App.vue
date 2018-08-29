@@ -15,13 +15,29 @@ export default {
   },
   methods: {
     boardcast() {
-      this.bus.$emit('boardcast', 'hey my sons.');
+      this.bus.$emit('boardcast', 'hey my sons.')
     },
     request() {
-      this.axios.get('/api/user')
+      this.$api({
+          method: 'get',
+          url: '/api/data',
+          data: {
+            type: 1,
+          }
+        })
         .then(res => {
-          console.log(res);
-        });
+          console.log(res.data)
+        })
+      this.$api({
+          method: 'post',
+          url: '/api/test',
+          data: {
+            type: 1,
+          }
+        })
+        .then(res => {
+          console.log(res.data)
+        })
     },
   },
   mounted() {
@@ -29,7 +45,7 @@ export default {
     //  if() {
 
     //  }
-    // });
+    // })
   },
 }
 </script>
@@ -39,7 +55,6 @@ export default {
 //   background-repeat: repeat-y;
 //   background-size: contain;
 // }
-
 button.tttt {
   font-size: 36px;
   border: 1px solid red;

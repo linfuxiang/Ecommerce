@@ -14,7 +14,7 @@ module.exports = postcss.plugin('postcss-border-1-px', function(opts) {
           return false
         }
         // 如果属性值不是1px solid red格式的，则忽略
-        if (!/^.+ .+ .+$/.test(decl.value)) {
+        if (!/^\d+px .+ .+$/.test(decl.value)) {
           return false
         }
         // 如果带有注释/*no*/，则忽略

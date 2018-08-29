@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 let UA = navigator.userAgent,
   isAndroid = /android|adr/gi.test(UA),
   isIos = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
@@ -34,9 +36,9 @@ export default {
       let firstElementChild: Element | null = docEl.firstElementChild;
       firstElementChild && firstElementChild.appendChild(metaEl);
       let refreshRem = function() {
-        let width = docEl.getBoundingClientRect().width;
+        let width: any = docEl.getBoundingClientRect().width;
         if (width / dpr > maxwidth) {
-          width = <number>maxwidth * dpr;
+          width = Number(maxwidth) * dpr;
         }
         let rem = width / 10;
         docEl.style.fontSize = rem + 'px';
