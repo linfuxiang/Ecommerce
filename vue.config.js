@@ -32,7 +32,7 @@ module.exports = {
     //   .tap(options => {
     //     return {
     //       //需要一个全局路径
-    //       resources: [path.resolve(__dirname, `./${sourceRoot}/common/styles/base.scss`)]
+    //       resources: [`index.scss`]
     //     }
     //   })
   }

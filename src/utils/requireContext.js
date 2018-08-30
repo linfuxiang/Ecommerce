@@ -1,6 +1,6 @@
 export default function() {
   const requireComponent = require.context(
-    '../src/mocks/',
+    '../mocks/',
     false,
     /\.js$/
   )

@@ -1,6 +1,6 @@
 <template>
   <div class="banner border-b">
-    <router-link v-for="(title, index) in options" :to="{path: '/' + title.url}" :key="title.url">
+    <router-link v-for="title in options" :to="{path: '/' + title.url}" :key="title.url">
       <p :class="{active: active == title.desc}">{{ title.desc }}</p>
     </router-link>
     <!-- <div class="logo"></div> -->

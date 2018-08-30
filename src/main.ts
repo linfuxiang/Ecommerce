@@ -21,8 +21,8 @@ let api = function (
 	return axios(args)
 }
 
-import bus from '@/utils/bus'
-import flexible from '@/utils/flexible'
+import bus from '@/common/scripts/bus'
+import flexible from '@/common/scripts/flexible'
 
 Vue.config.productionTip = false
 
