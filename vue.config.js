@@ -1,4 +1,5 @@
-let path = require('path')
+const path = require('path')
+const apiMocker = require('webpack-api-mocker')
 
 let sourceRoot = 'src'
 module.exports = {
@@ -22,6 +23,11 @@ module.exports = {
         data: `@import "@/common/styles/base.scss";`
       }
     }
+  },
+  devServer: {
+    before(app) {
+      apiMocker(app, path.resolve(__dirname, `${sourceRoot}/mocks/index.js`))
+    },
   },
   chainWebpack: config => {
     // config.module

@@ -36,6 +36,7 @@
     "sass-resources-loader": "^1.3.3",
     "ts-jest": "^23.0.0",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webpack-api-mocker": "^1.5.12"
   }
 }

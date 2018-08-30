@@ -1,13 +1,8 @@
-import Mock from 'mockjs'
-
-Mock.mock('/api/test', function(args = { type: 1 }) {
-  if (args.type == 1) {
-    return {
-      data: 333
+module.exports = {
+    ['POST /api/test'](req, res) {
+        return res.json({
+            page: 'b',
+            id: 345,
+        });
     }
-  } else {
-    return {
-      data: 444
-    }
-  }
-})
+}

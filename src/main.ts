@@ -4,7 +4,6 @@ import router from './routes/router'
 import store from './stores/store'
 import './registerServiceWorker'
 import axios from 'axios'
-import './mocks/base'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
