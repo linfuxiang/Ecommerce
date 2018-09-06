@@ -1,6 +1,32 @@
+.index {
+  padding-top: 96px;
+  _border-bottom: 1px solid red;
+  margin-bottom: 20px;
+  background: #fff;
+  .more {
+    margin-bottom: 20px;
+    border-bottom: 1px solid red;
+  }
+}
+
+ul {
+  width: 100%;
+  li {
+    background: #fafafa;
+    margin-bottom: 20px;
+    text-align: center;
+    div.title {
+      font-size: 30px;
+    }
+    img {
+      width: 250px;
+    }
+  }
+}
+
 button {
-  font-size: 36px;
-  border: 1px solid gray;
+  @include fontSize(30px);
+  _border: 1px solid gray;
   background: transparent;
   border-radius: 10px;
   color: black;

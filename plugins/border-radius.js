@@ -5,10 +5,15 @@ module.exports = postcss.plugin('postcss-group', function(opts) {
   opts.keepPxComment = opts.keepPxComment || 'no'
   // 传入配置相关的代码
   return function(root, result) {
-    let list = []	// 用于记录需要添加的规则
+    let list = [] // 用于记录需要添加的规则
     // 遍历root
     root.walkRules(function(rule) {
       rule.walkDecls(/^border\-radius$/, function(decl) {
+        // 只有针对postcss处理的属性才使用
+        if (!/\_$/.test(decl.raws.before)) {
+          return false
+        }
+        
         // 如果下一句为注释则不转译
         let next = decl.next()
         if (
@@ -100,8 +105,8 @@ module.exports = postcss.plugin('postcss-group', function(opts) {
         // 为使after元素可以根据父元素绝对定位，需为父元素加上relative并删除可能存在的static
         rule.prepend({ prop: 'position', value: 'relative' })
         rule.walkDecls(/position/, function(decl) {
-          if(decl.value === 'static') {
-          	decl.remove
+          if (decl.value === 'static') {
+            decl.remove
           }
         })
       })

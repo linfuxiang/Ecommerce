@@ -8,6 +8,9 @@ module.exports = {
   outputDir: 'dist',
   assetsDir: 'static',
   configureWebpack: {
+    entry: {
+      iconfont: './public/iconfont/iconfont.js'
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, sourceRoot),
@@ -15,6 +18,7 @@ module.exports = {
     },
   },
   css: {
+    // module: true,
     loaderOptions: {
       // 给 sass-loader 传递选项
       sass: {
@@ -25,6 +29,7 @@ module.exports = {
     }
   },
   devServer: {
+    port: 9527,
     before(app) {
       apiMocker(app, path.resolve(__dirname, `${sourceRoot}/mocks/index.js`))
     },
@@ -41,5 +46,12 @@ module.exports = {
     //       resources: [`index.scss`]
     //     }
     //   })
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].chunks = ['chunk-vendors', 'chunk-common', 'iconfont', 'app']
+        args[0].chunksSortMode = 'manual'
+        return args
+      })
   }
 }
