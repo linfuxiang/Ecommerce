@@ -7,17 +7,17 @@ import axios from 'axios'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-let api = function (
-	args = {
-		method: 'get',
-    url: '',
-    data: {}
-	}
+let api = function(
+    args = {
+        method: 'get',
+        url: '',
+        data: {}
+    }
 ) {
-	if(isProduction) {
-		args.url = 'http://74.82.198.21:8888' + args.url
-	}
-	return axios(args)
+    if (isProduction) {
+        args.url = 'http://74.82.198.21:8888' + args.url
+    }
+    return axios(args)
 }
 
 import bus from '@/common/scripts/bus'
@@ -33,7 +33,7 @@ Vue.prototype.bus = bus
 // console.log(process.env.NODE_ENV)
 
 new Vue({
-	router,
-	store,
-	render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

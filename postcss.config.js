@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     // './plugins/border-radius': {},
-    './plugins/border-1-px': {},
+    './postcss-plugins/border-1-px': {},
     'postcss-sprites': {
       // stylesheetPath: '',
       spritePath: './src/assets/sprites',

@@ -1,0 +1,31 @@
+# EditorConfig
+
+# 表明是最顶层的配置文件
+root = true
+# 正则*匹配所有文件
+[*]
+# 编码格式
+charset = utf-8
+# 定义换行符
+end_of_line = lf
+# 缩进空格数
+indent_size = 4
+# 缩进方式
+indent_style = space
+# 文件是否以空白行结尾
+insert_final_newline = false
+end_with_newline = false
+
+=== 有问题 ===
+# 对script, style标签内代码缩进，缩进.vue的<style>标签eslint会报错
+indent_scripts = normal
+
+[*.{js,scss,css}]
+# 文件是否以空白行结尾
+insert_final_newline = false
+# 是否去除行首行尾的空白字符
+trim_trailing_whitespace = true
+
+[*.js]
+# 数组缩进
+keep_array_indentation = true

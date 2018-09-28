@@ -1,0 +1,9 @@
+postcss-plugins
+src/assets
+src/mocks
+src/utils
+public
+*.html
+*.png
+*.jpg
+*.jpeg
