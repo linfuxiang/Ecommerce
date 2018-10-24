@@ -8,6 +8,7 @@
             <option value="i" v-for="i in obj.arr">{{ i }}</option>
         </select>
         <Home ref="home" :name="mmm"></Home>
+        <About></About>
         <!-- <router-view></router-view> -->
         <!-- <img src="@/assets/logo@2x.png" alt="" v-for="i in 50"> -->
     </div>
@@ -16,6 +17,7 @@
     // import iconfont from '../public/iconfont/iconfont.css'
     // import { mapState } from 'vuex'
     import Home from './views/Home'
+    import About from './views/About'
     import { createNamespacedHelpers } from 'vuex'
     const { mapState } = createNamespacedHelpers('moduleA')
     export default {
@@ -28,7 +30,8 @@
             }
         },
         components: {
-            Home
+            Home,
+            About,
         },
         computed: {
             // ...mapState('moduleA', {
@@ -61,7 +64,7 @@
             //  if() {
 
             //  }
-            // })
+            // })        
         },
     };
 </script>
