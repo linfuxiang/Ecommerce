@@ -1,12 +1,13 @@
 <template>
     <div id="list-demo" class="demo">
-        <button v-on:click="add">Add</button>
+        <!-- <button v-on:click="add">Add</button>
         <button v-on:click="remove">Remove</button>
         <transition-group name="list" tag="p">
             <span v-for="item in items" v-bind:key="item" class="list-item">
 		      {{ item }}
 		    </span>
-        </transition-group>
+        </transition-group> -->
+        {{ $routes.path }}
     </div>
 </template>
 <script>

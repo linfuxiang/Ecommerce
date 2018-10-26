@@ -1,15 +1,12 @@
 <template>
     <div class="app">
-        {{ name }}
-        <!-- {{ nameA }} -->
-        <!-- {{ nameB }} -->
-        <button @click="increment">increment</button>
+        <!-- <button @click="increment">increment</button>
         <select name="" id="">
             <option value="i" v-for="i in obj.arr">{{ i }}</option>
         </select>
         <Home ref="home" :name="mmm"></Home>
-        <About></About>
-        <!-- <router-view></router-view> -->
+        <About></About> -->
+        <router-view></router-view>
         <!-- <img src="@/assets/logo@2x.png" alt="" v-for="i in 50"> -->
     </div>
 </template>
